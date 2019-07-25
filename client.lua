@@ -1,10 +1,10 @@
 _menuPool = NativeUI.CreatePool()
 _menuPool:RefreshIndex()
- mainMenu = NativeUI.CreateMenu("AnimTester", "~b~AnimTester", 5, 50,"NativeUI","bg",nil,255,255,255,255)
+ mainMenu = NativeUI.CreateMenu("AnimTester", "~b~AnimTester", 5, 50,"AnimTester","bg",nil,255,255,255,255)
 _menuPool:Add(mainMenu)
- AnimDictMenu = NativeUI.CreateMenu("AnimTester", ":)", 5, 50,"NativeUI","bg",nil,255,255,255,199)
+ AnimDictMenu = NativeUI.CreateMenu("AnimTester", ":)", 5, 50,"AnimTester","bg",nil,255,255,255,199)
 _menuPool:Add(AnimDictMenu)
- searchMenu = NativeUI.CreateMenu("AnimTester", "~b~Résultats de la recherche", 5, 50,"NativeUI","bg",nil,255,255,255,199)
+ searchMenu = NativeUI.CreateMenu("AnimTester", "~b~Résultats de la recherche", 5, 50,"AnimTester","bg",nil,255,255,255,199)
 _menuPool:Add(searchMenu)
 
 local DictSelected = "abigail_mcs_1_concat-0"
@@ -12,7 +12,7 @@ local libNotif, animNotif, durNotif, term
 
 function DrawMainMenu()
     
-     mainMenu = NativeUI.CreateMenu("AnimTester", "~b~"..#AnimsRaw-1 .." animations  ~w~|~b~  "..#AnimsDict-1 .." librairies", 5, 50,"NativeUI","bg",nil,255,255,255,255)
+     mainMenu = NativeUI.CreateMenu("AnimTester", "~b~"..#AnimsRaw-1 .." animations  ~w~|~b~  "..#AnimsDict-1 .." librairies", 5, 50,"AnimTester","bg",nil,255,255,255,255)
     _menuPool:Add(mainMenu)
     MenuSettings()
     
@@ -58,7 +58,7 @@ function AddMenuName()
         Utils.ShowAdvancedNotification("Librairie ~o~"..DictSelected.. "~s~ vide ?")
         return
     else
-        AnimDictMenu = NativeUI.CreateMenu("AnimTester", "~b~"..DictSelected, 5, 50,"NativeUI","bg",nil,255,255,255,199)
+        AnimDictMenu = NativeUI.CreateMenu("AnimTester", "~b~"..DictSelected, 5, 50,"AnimTester","bg",nil,255,255,255,199)
         _menuPool:Add(AnimDictMenu)
         MenuSettings()
     
@@ -118,7 +118,7 @@ function RechercheMenu()
         end
     end 
     
-     searchMenu = NativeUI.CreateMenu("AnimTester", "~b~"..count.." Résultats pour '"..term.."'", 5, 50,"NativeUI","bg",nil,255,255,255,199)
+     searchMenu = NativeUI.CreateMenu("AnimTester", "~b~"..count.." Résultats pour '"..term.."'", 5, 50,"AnimTester","bg",nil,255,255,255,199)
     _menuPool:Add(searchMenu)
     MenuSettings()
     
@@ -167,5 +167,3 @@ Citizen.CreateThread(function()
         end
     end
 end)
-
---DrawMainMenu()
