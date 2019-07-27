@@ -66,11 +66,11 @@ function Utils.ShowHelpNotification(text)
 end
 
 function Utils.ShowAdvancedNotification(title, msg, icon, iconName)
-	RequestStreamedTextureDict("NativeUI", true)
-	while not HasStreamedTextureDictLoaded("NativeUI") do Wait(0) end
+	RequestStreamedTextureDict("AnimTester", true)
+	while not HasStreamedTextureDictLoaded("AnimTester") do Wait(0) end
 	SetNotificationTextEntry('STRING')
     AddTextComponentString(msg)
-	local a = SetNotificationMessage("NativeUI", "icon", false, 0, "AnimTester", title)
+	local a = SetNotificationMessage("AnimTester", "icon", false, 0, "AnimTester", title)
 	DrawNotification(true, true)
     return a
 end
